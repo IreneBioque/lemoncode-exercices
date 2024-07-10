@@ -4,7 +4,7 @@ const array = ["first", "second", "third", "fourth", "fifth"];
 
 //Head
 
-const head = (array: string[]): string => {
+const head = <T>(array: T[]): T => {
   const [first] = array;
   return first;
 };
@@ -13,7 +13,7 @@ console.log(`This is the first element of an array => ${head(array)}`);
 
 // Tail
 
-const tail = (array: string[]): string[] => {
+const tail = <T>(array: T[]): T[] => {
   const [, ...rest] = array;
   return rest;
 };
@@ -24,7 +24,7 @@ console.log(`This is the result of tail implementation =>`, tail(array));
 
 const arrayFruits = ["Apple", "Orange", "Strawberry", "Mango", "Peach"];
 
-const init = (array: string[]): string[] => {
+const init = <T>(array: T[]): T[] => {
   array.pop();
   return array;
 };
@@ -33,7 +33,7 @@ console.log(`This is the result of init implementation =>`, init(arrayFruits));
 
 //Last
 
-const last = (array: string[]): string | undefined => {
+const last = <T>(array: T[]): T | undefined => {
   return array.pop();
 };
 
@@ -45,7 +45,7 @@ console.log(`This is the last elemet of an array => ${last(array)}`);
 
 // concat
 
-const concat = (a: string[], b: string[]): string[] => {
+const concat = <T>(a: T[], b: T[]): T[] => {
   return [...a, ...b];
 };
 const wildAnimals = ["Lion", "Bear", "Zebra"];
@@ -58,7 +58,7 @@ console.log(
 
 // concat 2.0
 
-const multipleConcat = (...arrays: string[][]): string[] => {
+const multipleConcat = <T>(...arrays: T[][]): T[] => {
   return arrays.flat();
 };
 
